@@ -15,13 +15,11 @@ function App() {
 
   let newNotes = [];
 
-  if (notes.length === 0) {
-    return newNotes;
-  } else {
+  if (notes.length !== 0) {
     newNotes = notes.filter((location) => {
       return location.title.indexOf(inputVolume) > -1
     });
-  }
+  } 
 
   return (
     <>

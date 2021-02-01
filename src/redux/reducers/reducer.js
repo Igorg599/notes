@@ -1,5 +1,5 @@
 const initialState = {
-    items: null
+    items: []
 };
 
 const data = (state = initialState, action) => {
@@ -7,7 +7,7 @@ const data = (state = initialState, action) => {
         case 'SET_NOTES':
             return {
                 ...state,
-                items: action.payload,
+                items: [...state.items],
             };
 
 

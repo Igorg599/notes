@@ -12,15 +12,56 @@ code {
     monospace;
 }
 
-.App {
+.mac {
+  margin: 5vh 10vw;
+  width: 80vw;
+  min-height: 100vh;
   display: flex;
-  justify-content: flex-start;
+  border-radius: 7px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .6);
 }
 
 .side {
+  position: relative;
   width: 20vw;
   background-color: rgb(34, 28, 28);
-  min-height: 100vh;
+  border-radius: 7px 0 0 7px;
+  min-height: 100%;
+  &__ring {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border-radius: 11px;
+    &-red {
+      top: 15px;
+      left: 15px;
+      background-color: rgb(240, 68, 68);
+    }
+    &-orange {
+      top: 15px;
+      left: 35px;
+      background-color: rgb(240, 185, 68);
+    }
+    &-green {
+      top: 15px;
+      left: 55px;
+      background-color: rgb(32, 216, 42);
+    }
+  }
+  &__icon {
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    margin: 7px 20px 50px 0;
+  }
+  &__item {
+    padding: 0 20px;
+    color: #fff;
+    min-height: 50px;
+  }
+  &__input {
+    padding: 0 0 20px 50px;
+  }
 }
 
 .empty {

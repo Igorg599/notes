@@ -3,7 +3,7 @@ import { TextField } from '@material-ui/core';
 import {useDispatch} from 'react-redux';
 import {setNewNotes} from '../../redux/actions/action';
 
-const NoteModal = ({active, setActive}) => {
+const EmptyModal = ({active, setActive}) => {
     const dispatch = useDispatch();
     const [newTitle, setNewTitle] = React.useState('');
     const [newDescr, setNewDescr] = React.useState('');
@@ -46,4 +46,4 @@ const NoteModal = ({active, setActive}) => {
     )
 }
 
-export default NoteModal;
+export default EmptyModal;

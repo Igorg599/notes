@@ -30,7 +30,6 @@ function App() {
 
   
   const onSelectNote = React.useCallback((index) => {
-    console.log(index);
     dispatch(setNote(index));
   }, [dispatch]);
 
@@ -39,7 +38,10 @@ function App() {
       {notes.length !== 0 ? 
         <div className="mac">
           <Side notes={newNotes} onClickNote={onSelectNote} searchUser={searchUser} activeNote={activeNote}/>
-          <Note notes={viewNote}/>
+          {viewNote.length > 0 ?
+            <Note note={viewNote}/> :
+            <div className="note"></div>
+          }
         </div> :
         <Empty/>
       }

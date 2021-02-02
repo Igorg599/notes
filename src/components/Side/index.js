@@ -21,7 +21,7 @@ const Side = React.memo (
     };
     
     return (
-      <div className="side">
+      <div className="side" onClick={() => onClickNote(0)}>
         <div className='side__ring side__ring-red'/>
         <div className='side__ring side__ring-orange'/>
         <div className='side__ring side__ring-green'/>
@@ -31,17 +31,19 @@ const Side = React.memo (
         <div className='side__icon'>
           <CloudQueueIcon/>
         </div>
-        {notes.map(item => (
-          <div 
-          className={activeNote === item.id ? 'side__item active' : 'side__item'} 
-          key={item.id}
-          onClick={() => onClickNote(item.id)}>
-            <SideItem 
-            id = {item.id}
-            title = {item.title}
-            onRemove={onRemoveItem}/>
-          </div>
-        ))}
+        <div onClick={e => e.stopPropagation()}>
+          {notes.map(item => (
+            <div 
+            className={activeNote === item.id ? 'side__item active' : 'side__item'} 
+            key={item.id}
+            onClick={() => onClickNote(item.id)}>
+              <SideItem 
+              id = {item.id}
+              title = {item.title}
+              onRemove={onRemoveItem}/>
+            </div>
+          ))}
+        </div>
         <div className="side__input">
           <TextField 
           error

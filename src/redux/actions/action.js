@@ -12,3 +12,8 @@ export const changeNote = (obj) => ({
     type: 'CHANGE_NOTE',
     payload: obj,
 });
+
+export const setNote = (index) => ({
+    type: 'SET_NOTE',
+    payload: index,
+});

@@ -6,6 +6,7 @@ import { TextField } from '@material-ui/core';
 import {changeNote} from '../../redux/actions/action';
 
 function Note({notes}) {
+  console.log(notes);
   const dispatch = useDispatch();
   const [dataInput, setDataInput] = React.useState(true);
   const [newTitle, setNewTitle] = React.useState(notes.title);
@@ -22,7 +23,7 @@ function Note({notes}) {
   const onSaveNote = (e) => {
     e.preventDefault();
     const newobj = {
-        id: notes.id,
+        id: notes[0].id,
         title: newTitle,
         descr: newDescr,
     }
@@ -34,8 +35,8 @@ function Note({notes}) {
     <form onSubmit={onSaveNote} className="note">
       {dataInput ?
         <>
-          <h2>{notes.title}</h2>
-          <p>{notes.descr}</p>
+          <h2>{notes[0].title}</h2>
+          <p>{notes[0].descr}</p>
         </> :
         <>
           <div className='note__input'>

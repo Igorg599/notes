@@ -8,12 +8,12 @@ function SideItem({id, title, onRemove}) {
 }
   
   return (
-    <div className="side__item">
+    <>
       {title}
       <div className='side__item-delete'>
         <DeleteForeverIcon color="primary" onClick={onDeleteNote}/>
       </div>
-    </div>
+    </>
   );
 }
 

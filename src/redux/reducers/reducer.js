@@ -1,5 +1,6 @@
 const initialState = {
-    items: []
+    items: [],
+    activeNote: null
 };
 
 const data = (state = initialState, action) => {
@@ -29,6 +30,13 @@ const data = (state = initialState, action) => {
                 ...state,
                 items: replacedItems,
             };
+        
+        case 'SET_NOTE':
+            return {
+                ...state,
+                activeNote: action.payload,
+            }    
+
 
         default:
             return state;

@@ -70,7 +70,7 @@ code {
     overflow-x: hidden;
     text-overflow: ellipsis;
     &:hover {
-      background-color:rgb(214, 204, 58);
+      background-color:rgb(114, 108, 28);
       color: rgb(0,0,0);
     }
     &-delete {
@@ -78,6 +78,10 @@ code {
       right: 5px;
       top: 22px;
       cursor: pointer;
+    }
+    &.active {
+      background-color:rgb(214, 204, 58);
+      color: #000;
     }
   }
   &__input {

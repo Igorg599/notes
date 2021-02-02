@@ -47,7 +47,7 @@ const Side = React.memo (
         <div className="side__input">
           <TextField 
           error
-          id="outlined-error-helper-text"
+          labelId="demo-simple-select-error-label"
           label="Поиск по заметкам" 
           variant="outlined" 
           onChange={onUpdateSearch}/>

@@ -17,6 +17,19 @@ const data = (state = initialState, action) => {
                 items: newItemsRemove,
             };
 
+        case 'CHANGE_NOTE':
+            const newItems = [action.payload];
+            const replacedItems = state.items.map(e => {
+                if (newItems.some(({ id }) => id === e.id)) {
+                    return newItems.find(({ id }) => id === e.id);
+                }
+                return e;
+            });
+            return {
+                ...state,
+                items: replacedItems,
+            };
+
         default:
             return state;
     }

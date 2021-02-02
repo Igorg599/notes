@@ -7,3 +7,8 @@ export const removeNoteItem = (id) => ({
     type: 'REMOVE_NOTE_ITEM',
     payload: id,
 });
+
+export const changeNote = (obj) => ({
+    type: 'CHANGE_NOTE',
+    payload: obj,
+});

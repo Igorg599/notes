@@ -26,7 +26,7 @@ function App() {
       {notes.length !== 0 ? 
         <div className="mac">
           <Side notes={newNotes} searchUser={searchUser}/>
-          <Note/>
+          <Note notes={notes[0]}/>
         </div> :
         <Empty/>
       }
